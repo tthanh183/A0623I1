@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+
+<script>
+  let str = [];
+  let length = parseInt(prompt("Nhập số lượng phần tử của mảng:"));
+  for(let i =0;i<length;i++) {
+    str.push(parseInt(prompt("Thêm phần tử vào mảng:")));
+  }
+  let num = parseInt(prompt("Nhập số muốn tìm kiếm:"));
+  for(let i =0;i<length;i++) {
+    if(str[i] === num) {
+      for(let j = i;j<length;j++) {
+        str[j] = str[j+i];
+      }
+      str[length-1] = 0;
+    }
+  }
+  console.log(str);
+
+</script>
+</body>
+</html>

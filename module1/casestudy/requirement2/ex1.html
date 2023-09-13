@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+
+
+<script>
+  let height = parseInt(prompt("Nhập vào chiều cao của tam giác"));
+  for(let i =1;i<= height;i++) {
+    let row = '';
+    for(let j=1;j<=i;j++) {
+      if(j === 1 || j=== i || i === height) {
+        row += '*';
+      }else {
+        row += '&nbsp&nbsp';
+      }
+    }
+    row += '<br>';
+    document.write(row);
+  }
+
+</script>
+</body>
+</html>

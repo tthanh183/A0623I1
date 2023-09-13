@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+
+<script>
+  function commonCharacterCount(s1, s2) {
+    if (!s1 || !s2 || typeof s1 !== "string" || typeof s2 !== "string") {
+      return 0;
+    }
+
+    const charCount1 = countCharacters(s1);
+    const charCount2 = countCharacters(s2);
+    let commonCount = 0;
+
+    for (const char in charCount1) {
+      if (charCount2.hasOwnProperty(char)) {
+        commonCount += Math.min(charCount1[char], charCount2[char]);
+      }
+    }
+
+    return commonCount;
+  }
+
+  function countCharacters(s) {
+    const charCount = {};
+
+    for (const char of s) {
+      charCount[char] = (charCount[char] || 0) + 1;
+    }
+
+    return charCount;
+  }
+
+  const s1 = "aabcc";
+  const s2 = "adcaa";
+  const result = commonCharacterCount(s1, s2);
+  console.log("Số lượng ký tự chung giữa hai xâu:", result);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+
+<script>
+  let original = parseInt(prompt("Nhập số tiền gửi vào ban đầu:"));
+  let interest = parseInt(prompt("Nhập % lãi hàng năm:"));
+  let months = parseInt(prompt("Nhập số tháng gửi:"));
+
+  let profits =  original*(1 + interest)^months;
+  alert("Tổng số tiền bạn nhận được là:" + profits);
+</script>
+</body>
+</html>

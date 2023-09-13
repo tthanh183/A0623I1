@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<input id="btnShow" type="button" value="Hiển thị học viên">
+<input id="btnAdd" type="button" value="Thêm mới học viên">
+<input id="btnUpdate" type="button" value="Sửa thông tin học viên">
+<input id="btnDelete" type="button" value="Xóa học viên">
+<span id = "showInfo"></span>
+<script>
+	let StudentManagement = function (studentCode, name, course, email, dateOfBirth, module) {
+        this.studentCode = studentCode;
+        this.name = name;
+        this.course = course;
+        this.email = email;
+        this.dateOfBirth = dateOfBirth;
+        this.module = module;
+        this.getStudentCode = function () {
+            return this.studentCode;
+        }
+        this.getName = function () {
+            return this.name;
+        }
+        this.getCourse = function () {
+            return this.course;
+        }
+        this.getEmail = function () {
+            return this.email;
+        }
+        this.getDateOfBirth = function () {
+            return this.dateOfBirth;
+        }
+        this.getModule = function () {
+            return this.module;
+        }
+        this.setStudentCode = function (studentCode) {
+            this.studentCode = studentCode;
+		}
+        this.setName = function (name) {
+            this.name = name;
+        }
+        this.setEmail = function(email) {
+            this.email = email;
+        }
+        this.setDateOfBirth = function(dateOfBirth) {
+            this.dateOfBirth = dateOfBirth;
+        }
+        this.setCourse = function(course) {
+            this.course = course;
+        }
+        this.setModule = function(module) {
+            this.module = module;
+        }
+        this.getInfo = function () {
+            console.log(`StudentCode: ${studentCode},Name: ${name},Course:${course}, Email:${email},
+             BirthDay:${dateOfBirth}, Module:${module}`);
+        }
+
+	}
+    let student1 = new StudentManagement("HV-0001", "Nguyễn Văn A", "C1022G1","nguyenvana@gmail.com","01/01/2004", 1);
+    let student2 = new StudentManagement("HV-0002", "Nguyễn Văn B", "C1122G1","nguyenvanb@gmail.com","02/02/2004", 1);
+    let student3 = new StudentManagement("HV-0003", "Nguyễn Thị C", "C1222G1","nguyenthic@gmail.com","03/03/2004", 1);
+    let studentArray = [];
+    studentArray.push(student1);studentArray.push(student2);studentArray.push(student3);
+    let btnShow = document.getElementById("btnShow");
+    btnShow.addEventListener("click", showInfo);
+    let btnAdd = document.getElementById("btnAdd");
+    btnAdd.addEventListener("click", addStudent);
+	let btnUpdate = document.getElementById("btnUpdate");
+    btnUpdate.addEventListener("click", updateStudent);
+    let btnDelete = document.getElementById("btnDelete");
+    btnDelete.addEventListener("click", deleteStudent);
+    function  showInfo() {
+        let table = "<table width='600' cellspacing='0' cellpadding='3' border='1'>";
+        table += "<tr>"+
+	            "<th>"+"Mã học viên"+"</th>"+
+                "<th>"+"Tên"+"</th>"+
+                "<th>"+"Lớp"+"</th>"+
+                "<th>"+"Email"+"</th>"+
+                "<th>"+"Ngày sinh"+"</th>"+
+	            "</tr>";
+        for(let i =0;i<studentArray.length;i++) {
+			table += "<tr>"+
+					"<td>"+studentArray[i].getStudentCode()+"</td>" +
+					"<td>"+studentArray[i].getName()+ "</td>" +
+                    "<td>"+studentArray[i].getCourse()+ "</td>" +
+	                "<td>"+studentArray[i].getEmail()+ "</td>" +
+	                "<td>"+studentArray[i].getDateOfBirth()+ "</td>" +
+					"</tr>";
+        }
+        table += "</table>";
+        document.getElementById("showInfo").innerHTML = table;
+    }
+    function addStudent() {
+        let studentCode;
+        do {
+            studentCode = prompt("Nhập mã học viên (định dạng HV-XXXX với XXXX là 4 chữ số):");
+        } while (!isValidStudentCode(studentCode));
+
+        let name;
+        do {
+            name = prompt("Nhập tên học viên (tối đa 50 ký tự):");
+        } while (!isValidName(name));
+
+        let course = prompt("Nhập lớp học viên:");
+
+        let email;
+        do {
+            email = prompt("Nhập email học viên:");
+        } while (!isValidEmail(email));
+
+        let dateOfBirth;
+        do {
+            dateOfBirth = prompt("Nhập ngày sinh học viên (định dạng dd/mm/yyyy):");
+        } while (!isValidDate(dateOfBirth));
+
+        let module;
+        do {
+            module = parseInt(prompt("Nhập module (từ 1 đến 6):"));
+        } while (isNaN(module) || module < 1 || module > 6);
+
+        let newStudent = new StudentManagement(studentCode, name, course, email, dateOfBirth, module);
+        studentArray.push(newStudent);
+        showInfo();
+    }
+
+    function isValidStudentCode(code) {
+        // Kiểm tra định dạng mã học viên HV-XXXX (với XXXX là 4 chữ số)
+        const regex = /^HV-\d{4}$/;
+        return regex.test(code);
+    }
+
+    function isValidName(name) {
+        // Kiểm tra độ dài tên học viên không vượt quá 50 ký tự
+        return name.length <= 50;
+    }
+
+    function isValidEmail(email) {
+        // Kiểm tra định dạng email hợp lệ (đơn giản ở đây chỉ kiểm tra có chứa ký tự @ và dấu chấm)
+        const regex = /@/;
+        return regex.test(email);
+    }
+
+    function isValidDate(date) {
+        // Kiểm tra định dạng ngày sinh dd/mm/yyyy
+        const regex = /^\d{2}\/\d{2}\/\d{4}$/;
+        if (!regex.test(date)) return false;
+
+        const parts = date.split('/');
+        const day = parseInt(parts[0], 10);
+        const month = parseInt(parts[1], 10);
+        const year = parseInt(parts[2], 10);
+
+        // Kiểm tra ngày và tháng có hợp lệ không
+        if (day <= 0 || day > 31 || month <= 0 || month > 12) return false;
+
+        // Kiểm tra năm có hợp lệ không (giả sử năm từ 1900 đến 2099)
+        if (year < 1900 || year > 2099) return false;
+
+        return true;
+    }
+
+    function updateStudent() {
+        let newCode = prompt("Nhập mã học viên cần sửa");
+        let key = -1;
+        for(let i=0;i<studentArray.length;i++) {
+            if(studentArray[i].getStudentCode() === newCode) {
+                key = i;
+                break;
+            }
+        }
+        if(key === -1) {
+            alert("Không tim thấy học viên");
+            return;
+        }
+        do{
+            let value = parseInt(prompt("Nhập số từ 1-5 để chỉnh sửa thông tin"));
+            if(value === 1 ) {
+                let newCode = prompt("Nhập mã học viên mới");
+                studentArray[key].setStudentCode(newCode);
+            }else if(value === 2 ) {
+                let newName = prompt("Nhập tên học viên mới");
+                studentArray[key].setName(newName);
+            }else if(value === 3 ) {
+                let newCourse = prompt("Nhập lớp học viên mới");
+                studentArray[key].setCourse(newCourse);
+            }else if(value === 4 ) {
+                let newEmail = prompt("Nhập email học viên mới");
+                studentArray[key].setEmail(newEmail);
+            }else if(value === 5 ) {
+                let newDate = prompt("Nhập ngày sinh học viên mới");
+                studentArray[key].setDateOfBirth(newDate);
+            }else if(value === 6 ) {
+                let newModule = prompt("Nhập module học viên mới");
+                studentArray[key].setModule(newModule);
+            }
+            value = parseInt("Ấn nút q để thoát hoặc ấn 'c' để tiếp tục" );
+        }while(value !== 'q');
+        showInfo();
+    }
+    function deleteStudent() {
+        let newCode = prompt("Nhập mã học viên cần sửa");
+        let key = -1;
+        for(let i=0;i<studentArray.length;i++) {
+            if(studentArray[i].getStudentCode() === newCode) {
+                key = i;
+            }
+        }
+        if(key === -1) {
+            alert("Không tim thấy học viên");
+            return;
+        }
+        studentArray.splice(key,1);
+        showInfo();
+    }
+</script>
+
+
+</body>
+</html>

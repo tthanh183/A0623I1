@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+
+<script>
+  let celciusDegree = function (celciusDegree) {
+    this.celciusDegree = celciusDegree;
+    this.getCelciusDegree = function () {
+      return celciusDegree;
+    }
+    this.setCelciusDegree = function (celciusDegree) {
+      this.celciusDegree = celciusDegree;
+    }
+    this.getFDegree = function () {
+      return 9/5 * this.celciusDegree + 32;
+    }
+    this.getKenvinDegree = function () {
+      return this.celciusDegree + 275.15;
+    }
+  }
+  let myCelcius = new celciusDegree(25);
+  alert(myCelcius.getCelciusDegree() + " độ C bằng: " + myCelcius.getFDegree() + " độ F");
+  alert(myCelcius.getCelciusDegree() + " độ C bằng: " + myCelcius.getKenvinDegree() + " độ K");
+</script>
+</body>
+</html>

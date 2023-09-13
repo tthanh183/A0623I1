@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+
+<script>
+function isPrime (n) {
+    if(n <= 1 ) {
+        return false;
+    }
+    if(n <= 3 ) {
+        return  true;
+    }
+    if( n % 2 === 0 || n % 3 === 0 ) {
+        return false;
+    }
+    const sqrtNum = Math.sqrt(n);
+    for(let i = 5 ;i <= sqrtNum ; i+= 6 ) {
+        if(n % i === 0 || n % (i +2 ) === 0 ) {
+            return false;
+        }
+    }
+    return true;
+}
+
+  function countAndListPrimesIn2DArray(arr) {
+    let count = 0;
+    const primesList = [];
+
+    for (let row = 0; row < arr.length; row++) {
+      for (let col = 0; col < arr[row].length; col++) {
+        const num = arr[row][col];
+
+        if (isPrime(num)) {
+          primesList.push(num);
+          count++;
+        }
+      }
+    }
+
+    return { count, primesList };
+  }
+
+  const twoDimensionalArray = [
+    [2, 3, 4],
+    [5, 6, 7],
+    [8, 9, 10],
+  ];
+
+  const { count, primesList } = countAndListPrimesIn2DArray(twoDimensionalArray);
+  console.log("Danh sách các số nguyên tố trong mảng:", primesList);
+  console.log("Số lượng số nguyên tố trong mảng:", count);
+
+</script>
+</body>
+</html>

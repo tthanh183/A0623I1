@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+
+<script>
+  let earning = parseInt(prompt("Nhập thu nhập cá nhân: "));
+  let tax = 0;
+  if(earning>0 && earning <= 5000000) {
+    tax = earning * 0.05;
+  }else if(earning>= 5000001 && earning <= 10000000) {
+    tax = earning * 0.1 - 250000;
+  }else if(earning>= 10000001 && earning <= 18000000) {
+    tax = earning * 0.15 - 750000;
+  }else if(earning>= 18000001 && earning <= 32000000) {
+    tax = earning * 0.2 - 1650000;
+  }else if(earning>= 32000001 && earning <= 52000000) {
+    tax = earning * 0.25 - 3250000;
+  }else if(earning>= 5200001 && earning <= 80000000) {
+    tax = earning * 0.3 - 5850000;
+  }else if(earning>= 80000001) {
+    tax = earning * 0.35 - 9850000;
+  }
+  alert("Thuế thu nhập cá nhân là:" + tax);
+</script>
+</body>
+</html>

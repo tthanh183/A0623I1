@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+
+<script>
+  function sumOfEvenNumbersInMatrix(m, n) {
+    let sum = 0;
+
+    for (let i = 0; i < m; i++) {
+      for (let j = 0; j < n; j++) {
+        const number = parseInt(prompt(`Nhập giá trị cho phần tử ở hàng ${i + 1}, cột ${j + 1}:`));
+
+        if (!isNaN(number) && number % 2 === 0) {
+          sum += number;
+        }
+      }
+    }
+
+    return sum;
+  }
+
+  const m = parseInt(prompt("Nhập số hàng (m):"));
+  const n = parseInt(prompt("Nhập số cột (n):"));
+
+  const result = sumOfEvenNumbersInMatrix(m, n);
+  console.log("Tổng các số chẵn trong ma trận:", result);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+
+
+<script>
+  function isPrime (n) {
+    if(n <= 1 ) {
+      return false;
+    }
+    if(n <= 3 ) {
+      return  true;
+    }
+    if( n % 2 === 0 || n % 3 === 0 ) {
+      return false;
+    }
+    const sqrtNum = Math.sqrt(n);
+    for(let i = 5 ;i <= sqrtNum ; i+= 6 ) {
+      if(n % i === 0 || n % (i +2 ) === 0 ) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  let number = parseInt(prompt("Nhập vào số lượng số nguyên tố muốn hiện ra:"));
+  let count = 0,iterator = 2 ;
+  while( count <= number) {
+    if(isPrime(iterator)) {
+      count ++;
+      alert(iterator);
+    }
+    iterator++;
+  }
+</script>
+</body>
+</html>

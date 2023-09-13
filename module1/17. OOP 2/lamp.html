@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+
+<script>
+	let ElectricLamp = function (status) {
+        this.status = status;
+        this.turnOff = function () {
+            if(this.status) this.status = false;
+		}
+        this.turnOn = function () {
+            if(!this.status) this.status = true;
+        }
+	};
+    let SwitchButton = function (status, lamp) {
+        this.status = status;
+        this.lamp = lamp;
+        this.connectToLamp= function (lamp){
+            this.lamp = lamp;
+	    }
+        this.switchOff = function () {
+            if(this.status) {
+                this.status = false;
+                this.lamp.turnOff();
+                alert("Da tat den");
+            }else {
+                alert("Hay bat den truoc khi tat");
+            }
+	    }
+        this.switchOn = function () {
+            if(!this.status) {
+                this.status = true;
+                this.lamp.turnOn();
+                alert("Da bat den");
+            }else {
+                alert("Hay tat den truoc khi bat");
+            }
+        }
+    }
+    let electricLamp = new ElectricLamp();
+    let switchButton = new SwitchButton();
+    switchButton.connectToLamp(electricLamp);
+    switchButton.switchOn();
+    switchButton.switchOff();
+    switchButton.switchOn();
+    switchButton.switchOff();
+    switchButton.switchOn();
+    switchButton.switchOff();
+    switchButton.switchOn();
+    switchButton.switchOff();
+    switchButton.switchOn();
+    switchButton.switchOff();
+    switchButton.switchOn();
+    switchButton.switchOff();
+    switchButton.switchOn();
+    switchButton.switchOff();
+    switchButton.switchOn();
+    switchButton.switchOff();
+    switchButton.switchOn();
+    switchButton.switchOff();
+    switchButton.switchOn();
+    switchButton.switchOff();
+    
+</script>
+</body>
+</html>

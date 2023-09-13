@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            display: flex;
+            flex-direction: row;
+        }
+        .inside-box{
+            margin-left: 50px;
+        }
+        .button-box {
+            margin-top: 50px;
+            margin-left: 40px;
+
+        }
+        .result-box {
+            margin-top: 20px;
+            color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div>
+            <p style="margin-left: 60px">Amount</p>
+            <input type="text" name="amount" id="myAmount">
+        </div>
+        <div class="inside-box">
+            <p>From Currency</p>
+            <select id = "fromCurrency"  style="width: 100px; height: 20px;">
+                <option value="vnd">VND</option>
+                <option value="yen">¥</option>
+                <option value="usd">USD</option>
+            </select>
+        </div>
+        <div class="inside-box">
+            <p>From Currency</p>
+            <select id = "toCurrency" style="width: 100px; height: 20px;">
+                <option value="vnd">VND</option>
+                <option value="yen">¥</option>
+                <option value="usd">USD</option>
+            </select>
+        </div>
+        <div class="button-box">
+            <input id ="myButton" type="button" value="Convert" style="width: 80px; height: 20px; background-color:blueviolet; color:#cccccc;font-weight: bold">
+        </div>
+    </div>
+    <div class="result-box">
+        <span id ="result" style="margin-top: 100px"></span>
+    </div>
+
+</body>
+<script>
+    let inputElement = document.getElementById("myButton");
+    inputElement.addEventListener("click", do_something);
+    function do_something() {
+        let amount = document.getElementById("myAmount").value;
+        let fromCurrency = document.getElementById("fromCurrency").value;
+        let toCurrency = document.getElementById("toCurrency").value;
+        if(fromCurrency == "vnd"){
+            if(toCurrency == "vnd") {
+                let result = amount;
+                document.getElementById("result").innerHTML = "Result: " + result + "VND";
+            }
+            else if(toCurrency == "usd") {
+                let result = amount * 0.000042;
+                document.getElementById("result").innerHTML = "Result: " + result + "USD";
+            }
+            else{
+                let result = amount * 0.0059;
+                document.getElementById("result").innerHTML = "Result: " + result + "¥";
+            }
+
+        }
+        else if(fromCurrency == "usd"){
+            if(toCurrency == "usd") {
+                let result = amount;
+                document.getElementById("result").innerHTML = "Result: " + result + "USD";
+            }
+            else if(toCurrency == "vnd") {
+                let result = amount * 23.672;
+                document.getElementById("result").innerHTML = "Result: " + result + "VND";
+            }
+            else{
+                let result = amount * 139.01;
+                document.getElementById("result").innerHTML = "Result: " + result + "¥";
+            }
+
+        }
+        else{
+            if(toCurrency == "yen") {
+                let result = amount;
+                document.getElementById("result").innerHTML = "Result: " + result + "¥";
+            }
+            else if(toCurrency == "vnd") {
+                let result = amount * 170.30;
+                document.getElementById("result").innerHTML = "Result: " + result + "VND";
+            }
+            else{
+                let result = amount * 0.0072;
+                document.getElementById("result").innerHTML = "Result: " + result + "USD";
+            }
+
+        }
+    }
+</script>
+</html>

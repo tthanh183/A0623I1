@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+    <p id="clickHere">Click here</p>
+    <span id="show"></span>
+<script>
+	let clickHere = document.getElementById("clickHere");
+    clickHere.addEventListener("click", click);
+
+  i = 1;
+  function increase(num) {
+    return ++num;
+  }
+  function click() {
+      i = increase(i);
+      document.getElementById("show").innerText = i;
+  }
+
+</script>
+</body>
+</html>

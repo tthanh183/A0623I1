@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+
+<script>
+  function findMaxValueIn2DArray(arr) {
+    let max = arr[0][0];
+
+    for (let row = 0; row < arr.length; row++) {
+      for (let col = 0; col < arr[row].length; col++) {
+        if (arr[row][col] > max) {
+          max = arr[row][col];
+        }
+      }
+    }
+
+    return max;
+  }
+
+  function findMinValueIn2DArray(arr) {
+    let min = arr[0][0];
+
+    for (let row = 0; row < arr.length; row++) {
+      for (let col = 0; col < arr[row].length; col++) {
+        if (arr[row][col] < min) {
+          min = arr[row][col];
+        }
+      }
+    }
+
+    return min;
+  }
+
+  const twoDimensionalArray = [
+    [10, 2, 5],
+    [8, 12, 3],
+    [7, 4, 9],
+  ];
+
+  const maxValue = findMaxValueIn2DArray(twoDimensionalArray);
+  const minValue = findMinValueIn2DArray(twoDimensionalArray);
+
+  console.log("Giá trị lớn nhất trong mảng:", maxValue);
+  console.log("Giá trị nhỏ nhất trong mảng:", minValue);
+
+</script>
+</body>
+</html>

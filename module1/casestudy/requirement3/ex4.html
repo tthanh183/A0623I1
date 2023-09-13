@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+
+
+<script>
+  let drinks = ['Cafe-1', 'Cam vắt-2', 'Nước ép cà rốt-3', 'Nước ép cà chua-4','Nước lọc-5','Nước dừa-6'];
+  let price = [50000, 35000, 40000, 40000, 20000, 70000];
+  let fee = 0 ;
+  let key = '';
+  do {
+    alert("Các loại đồ uống là: " +drinks.toString());
+    key = parseInt(prompt("Ấn phím để chọn đồ uống hoặc nhấn 7 để thoát:"));
+    if(key !== 7) {
+      fee += price[key-1];
+    }
+    key = parseInt(prompt("Ấn phím nhấn 7 để thoát hoặc phím bất kì đề tiếp tục:"));
+  }while(key !== 7);
+  alert("Số tiền phải trả là:" + fee) ;
+</script>
+</body>
+</html>

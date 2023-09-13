@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+
+<script>
+  function showFibo(n) {
+    if (n === 1) return 0;
+    if (n === 2) return 1;
+    return showFibo(n - 1) + showFibo(n - 2);
+  }
+
+  let i = 1;
+  let sum = 0;
+  while (i <= 20) {
+    document.write(showFibo(i));
+    sum += showFibo(i);
+    i++;
+  }
+
+  document.write(sum);
+</script>
+</body>
+</html>

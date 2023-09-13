@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+
+
+<script>
+	let salary = parseInt(prompt("Nhập vào lương của nhân viên"));
+    let tax = 0;
+    if(salary >= 15000000 ) {
+        tax = 0.2;
+    }else if(salary >= 7000000 ) {
+        tax = 0.1;
+	}else {
+        tax = 0.05;
+	}
+    alert("Lương ròng của nhân viên là: " + salary * tax);
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+
+<script>
+  function factorialRecursive(n) {
+    if (n === 0 || n === 1) {
+      return 1;
+    } else {
+      return n * factorialRecursive(n - 1);
+    }
+  }
+  let x = parseInt(prompt("Nhập vào số nguyên: "));
+  alert(x +"giai thừa là:" + factorialRecursive(x));
+</script>
+</body>
+</html>

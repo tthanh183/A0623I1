@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+
+<script>
+  function findMax(a, b, c) {
+    let max = a;
+    if(b > max) max = b;
+    if(c > max) max = c;
+    return max;
+  }
+  let firstNum = parseInt(prompt("Nhập vào số thứ nhất:"));
+  let secondNum = parseInt(prompt("Nhập vào số thứ hai:"));
+  let thirdNum = parseInt(prompt("Nhập vào số thứ ba:"));
+  alert("Số lớn nhất trong 3 số là:" + findMax(firstNum,secondNum, thirdNum));
+</script>
+</body>
+</html>

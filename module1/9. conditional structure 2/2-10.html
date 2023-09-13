@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+
+<script>
+  let usedKWH = prompt("Nhập số điện đã sử dụng(KWH):");
+  let price = 0;
+  const bac1=1728, bac2=1786, bac3=2074, bac4=2612, bac5=2919;
+  if(usedKWH >= 0 && usedKWH <= 50) {
+      price = usedKWH * bac1;
+  }else if( usedKWH >= 51 && usedKWH <= 100) {
+      price = 50 * bac1 + (usedKWH - 50) * bac2;
+  }else if( usedKWH >= 101 && usedKWH <= 200 ) {
+      price = 50 * bac1+ 50 * bac2 + (usedKWH  -100) * bac3;
+  }else if( usedKWH >= 201 && usedKWH <= 300 ) {
+      price = 50* bac1+ 50 * bac2 + 100 * bac3 +(usedKWH  -200) * bac4 ;
+  }else if( usedKWH >= 301 && usedKWH <= 400 ) {
+      price = 50 * bac1+ 50 * bac2 + 100 * bac3 + 100* bac4+(usedKWH  -300) * bac5 ;
+  }
+  alert("Tiền điện là: "+ price + "đồng");
+</script>
+</body>
+</html>

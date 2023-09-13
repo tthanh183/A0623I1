@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+
+
+<script>
+  let str = prompt("Nhập mảng:");
+  let count = 0;
+
+  // Kiểm tra xem chuỗi nhập vào có hợp lệ hay không
+  if (str === null || str.trim() === "") {
+    alert("Bạn chưa nhập chuỗi hoặc đã nhập chuỗi trống.");
+  } else {
+    // Đếm số lượng số nguyên âm trong chuỗi
+    for (let i = 0; i < str.length; i++) {
+      if (!isNaN(parseInt(str.charAt(i))) && str.charAt(i - 1) === '-') {
+        count++;
+      }
+    }
+    alert("Có " + count + " số nguyên âm trong mảng");
+  }
+
+</script>
+</body>
+</html>

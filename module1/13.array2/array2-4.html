@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+
+<script>
+  let str = prompt("Nhập vào một chuỗi");
+  let count =0 ;
+  for(let i =0 ;i<str.length;i++) {
+    if(isNaN(str[i])) {
+      count++;
+    }
+  }
+  console.log("Chuỗi có " + count+ " từ");
+</script>
+</body>
+</html>

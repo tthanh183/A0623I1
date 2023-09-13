@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+
+<script>
+  let engWord = ["Red", "Blue", "Green", "White", "Black" ];
+  let vnWord = ["Màu đỏ", "Màu xanh", "Màu lục", "Màu trắng", "Màu đen"];
+  let word = prompt("Nhập từ tiếng Anh cần tra:");
+  let result;
+  for(let i = 0 ;i <engWord.length; i++) {
+    if(engWord[i] === word) {
+      result = vnWord[i];
+    }
+  }
+  if(result !== undefined) {
+    alert("Nghĩa của từ đó là:"+ result);
+  }else {
+    alert("Không tìm thấy");
+  }
+
+</script>
+</body>
+</html>

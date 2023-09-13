@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+
+    var number1 = parseInt(prompt("Nhập số thứ nhất:"));
+    var number2 = parseInt(prompt("Nhập số thứ hai:"));
+    var number3 = parseInt(prompt("Nhập số thứ ba:"));
+
+    var max = number1; // Khởi tạo max với giá trị số thứ nhất
+
+    if (number2 > max) {
+        max = number2;
+    }
+
+    if (number3 > max) {
+        max = number3;
+    }
+
+    console.log("Số lớn nhất là: " + max);
+
+</script>
+</body>
+</html>

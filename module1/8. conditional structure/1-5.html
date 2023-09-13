@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    let exerciseScore = parseInt(prompt("Nhập điểm bài tập:"));
+    let midTermScore = parseInt(prompt("Nhập điểm giữa kì:"));
+    let finalTermScore = parseInt(prompt("Nhập điểm thi cuối kì:"));
+    let averageScore = exerciseScore * 0.2 + midTermScore * 0.3 + finalTermScore * 0.5;
+    if(averageScore >= 8.5 ) {
+        alert("Xếp hạng A");
+    }else if( averageScore >= 7 && averageScore <8.5 ) {
+        alert("Xếp hạng B");
+    }else if( averageScore >= 5.5 && averageScore <7) {
+        alert("Xếp hạng C");
+    }else if( averageScore >= 4 && averageScore < 5.5) {
+        alert("Xếp hạng D");
+    }else {
+        alert("Không đạt");
+    }
+</script>
+</body>
+</html>

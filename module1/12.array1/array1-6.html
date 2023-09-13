@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+
+
+<script>
+    let str = [];
+    let length = parseInt(prompt("Nhập số lượng phần tử của mảng:"));
+    for(let i =0;i<length;i++) {
+        str.push(parseInt(prompt("Thêm phần tử vào mảng:")));
+    }
+    let num = parseInt(prompt("Nhập số muốn tìm kiếm:"));
+    for(let i =0;i<length;i++) {
+        if(i === length -1 && str[i] !=== num) {
+            alert("V is not in the array");
+        }
+		if(str[i] === num) {
+            alert("V is in the array");
+		}
+    }
+</script>
+</body>
+</html>

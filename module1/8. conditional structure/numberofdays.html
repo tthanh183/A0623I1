@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div>
+        <input id ="month" type="text">
+        <input id="button" type="button" value="Tính số ngày">
+    </div>
+    <div>
+        <span id = "result"></span>
+    </div>
+
+<script>
+  let button = document.getElementById("button");
+  button.addEventListener("click", show);
+
+  function show() {
+      let month = document.getElementById("month").value;
+      let m = parseInt(month);
+      switch (m) {
+          case 1:
+              document.getElementById("result").innerHTML = "Tháng 1 có 31 ngày";
+              break;
+          case 3:
+              document.getElementById("result").innerHTML = "Tháng 3 có 31 ngày";
+              break;
+          case 5:
+              document.getElementById("result").innerHTML = "Tháng 5 có 31 ngày";
+              break;
+          case 7:
+              document.getElementById("result").innerHTML = "Tháng 7 có 31 ngày";
+              break;
+          case 8:
+              document.getElementById("result").innerHTML  = "Tháng 8 có 31 ngày";
+              break;
+          case 10:
+              document.getElementById("result").innerHTML = "Tháng 10 có 31 ngày";
+              break;
+          case 12:
+              document.getElementById("result").innerHTML  = "Tháng 12 có 31 ngày";
+              break;
+          case 2:
+              document.getElementById("result").innerHTML = "Tháng 2 có 28 hoặc 29 ngày";
+              break;
+          case 4:
+              document.getElementById("result").innerHTML  = "Tháng 4 có 30 ngày";
+              break;
+          case 6:
+              document.getElementById("result").innerHTML = "Tháng 6 có 30 ngày";
+              break;
+          case 9:
+              document.getElementById("result").innerHTML = "Tháng 9 có 30 ngày";
+              break;
+          case 11:
+              document.getElementById("result").innerHTML = "Tháng 11 có 30 ngày";
+              break;
+      }
+  }
+</script>
+</body>
+</html>

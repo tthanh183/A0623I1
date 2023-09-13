@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>HTML links</title>
+        <style>
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-family: Arial, sans-serif;
+            }
+            .container {
+                width: 60%;
+                height: 100%;
+                border-radius: 10px;
+                background-color:white;
+                border-style:ridge;
+            }
+            .top {
+                width: auto;
+                border-style: groove;
+                border-color: green;
+                background-color: green;
+            }
+            .column-left {
+                float: left;
+                padding: 50px 50px 50px 50px;
+                background-color:whitesmoke;
+                margin-right: 50px;
+            }
+            .column-right {
+                flex: 1;
+                padding: 50px 50px 50px 50px;
+                text-align: left;
+            }
+            h1 {
+                font-size:  120px;
+                color: white;
+            }
+            h2 {
+                font-size: 100px;
+                color:white;
+            }
+            h4 {
+                font-size: 60px;
+                color: green;
+            }
+            p {
+                font-size: 50px;
+            }
+            .experience {
+                display: flex;
+                justify-content: space-between;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="top">
+                <h1 style="margin-left: 120px;"><strong>Trần Văn A</strong></h1>
+                <h2 style="margin-left: 120px;">Lập trình viên</h2>
+            </div>
+            <div class="column-left">
+                <img src="https://cdn-icons-png.flaticon.com/512/2815/2815428.png" alt="img">
+                <h4>Thông tin liên hệ</h4>
+                <p>Số điện thoại: 0xxxxxxxxx</p>
+                <p>Địa chỉ: Đà Nẵng</p>
+                <p>Email: tranvana88@gmail.com</p>
+                <hr>
+                <h4>Ngôn ngữ</h4>
+                <p>Tiếng Anh</p>
+                <p>Tiếng Nhật</p>
+                <h4>Sở thích</h4>
+                <p>Nghe nhạc</p>
+                <p>Học ngoại ngữ</p>
+            </div>
+            <div class="column-right">
+                <h4>Định hướng phát triển cá nhân</h4>
+                <p>Tôi mong muốn được trở thành một lập trình viên chuyên nghiệp với các kĩ năng cần có.
+                    Ngoài ra, tôi còn mong muốn được tham gia trong môi trường làm việc thân thiện, phúc lợi tốt nhất.</p>
+                <h4>Học vấn</h4>
+                <dl style="font-size:50px ;">
+                    <dt>Đại học Bách Khoa Đà Nẵng</dt>
+                    <dd>-Chuyên nghành: Công nghệ phầm mềm</dd>
+                    <dt>Codegym</dt>
+                    <dd>-Java Fullstack</dd>
+                </dl>
+                <h4>Kỹ năng</h4>
+                <ul style="list-style-type:none;font-size: 50px;">
+                    <li>Java Backend</li>
+                    <li>Javascript</li>
+                    <li>ReactJs</li>
+                </ul>
+                <h4>Kinh nghiệm</h4>
+                <div class="experience">
+                    <p>2022-nay</p>
+                    <pre style="font-size: 50px;padding-right: 1000px;">
+                        Công ty ABC
+                        Fresher Developer
+                    </pre>
+                </div>
+                
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+
+<script>
+  function normalizeString(inputString) {
+    if (!inputString || typeof inputString !== "string") {
+      return "";
+    }
+
+    let words = inputString.trim().split(/\s+/);
+    let normalizedString = "";
+
+    for (let i = 0; i < words.length; i++) {
+      let word = words[i].toLowerCase();
+
+      if (i !== 0) {
+        normalizedString += " ";
+      }
+
+      normalizedString += word.charAt(0).toUpperCase() + word.slice(1);
+    }
+
+    return normalizedString;
+  }
+  function findLongestWord(inputString) {
+    if (!inputString || typeof inputString !== "string") {
+      return "";
+    }
+
+    let words = inputString.trim().split(/\s+/);
+    let longestWord = "";
+
+    for (let word of words) {
+      if (word.length > longestWord.length) {
+        longestWord = word;
+      }
+    }
+    return longestWord;
+  }
+  const inputString = "tRuong    TaN   HAI";
+  const normalizedString = normalizeString(inputString);
+
+  const longestWord = findLongestWord(inputString);
+  console.log("Từ dài nhất trong xâu:", longestWord);
+
+  console.log(normalizedString);
+
+</script>
+</body>
+</html>

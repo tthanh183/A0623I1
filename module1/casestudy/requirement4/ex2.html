@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+
+<script>
+  function differentSymbolsNaive(s) {
+    if (!s || typeof s !== "string") {
+      return 0;
+    }
+
+    const charSet = new Set();
+    for (let i = 0; i < s.length; i++) {
+      charSet.add(s[i]);
+    }
+
+    return charSet.size;
+  }
+  const inputString = "cabca";
+  const result = differentSymbolsNaive(inputString);
+  console.log("Số lượng ký tự khác nhau trong xâu:", result);
+</script>
+</body>
+</html>

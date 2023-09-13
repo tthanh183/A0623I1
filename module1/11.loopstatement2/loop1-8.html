@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+    <style>
+      .container {
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+      }
+      h1 {
+	      margin-left: 640px;
+      }
+    </style>
+</head>
+<body>
+	<h1>Game đoán chữ số</h1>
+  <div class="container">
+    <input id="startBtn" type="button" value="Start">
+    <input id="againBtn" type="button" value="Play again">
+  </div>
+
+<script>
+  let startBtn = document.getElementById("startBtn");
+  let againBtn = document.getElementById("againBtn");
+  startBtn.addEventListener("click", start);
+  againBtn.addEventListener("click", start);
+  function start () {
+    alert("Nhập khoảng giá trị bạn muốn đoán");
+    let beginNum = parseInt(prompt("Nhập số bắt đầu"));
+    let endNum = parseInt(prompt("Nhập số kết thúc"));
+
+    let random = Math.floor(Math.random()*endNum)+beginNum;
+    let guessNum = parseInt( prompt("Nhập số bạn muốn đoán:"));
+    let count = 1 ;
+    while (guessNum !== random && count <3) {
+      if(guessNum > random) {
+        alert("Hãy chọn số nhỏ hơn");
+      }else {
+        alert("Hãy chọn số lớn hơn");
+      }
+      guessNum = parseInt( prompt("Nhập số bạn muốn đoán:"));
+      count++;
+    }
+    alert("Bạn đã đoán đúng");
+  }
+</script>
+</body>
+</html>

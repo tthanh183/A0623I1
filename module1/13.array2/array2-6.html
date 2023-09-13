@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+
+
+<script>
+  let str = prompt("Nhập vào chuỗi kí tự:");
+  let strTemp = [];
+  for(let i =0;i<str.length;i++) {
+    if(str.charAt(i) === '-') {
+      strTemp.push('_');
+    }else {
+      strTemp.push(str[i]);
+    }
+  }
+  console.log(strTemp);
+</script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Caculator</h1>
+    <div class="input-box">
+      <input id="num1" type="text">
+      <input id="num2" type="text">
+    </div>
+    <br>
+    <div class="button-box">
+      <input id="addition" type="button" value="Addition(+)">
+      <input id="subtraction" type="button" value="Subtraction(-)">
+      <input id="multiplication" type="button" value="Multiplication(*)">
+      <input id="division" type="button" value="Division(/)">
+    </div>
+    <div class="result">
+      <span id="result"></span>
+    </div>
+</body>
+<script>
+    let add = document.getElementById("addition");
+    add.addEventListener("click",do_addition);
+    let sub = document.getElementById("subtraction");
+    sub.addEventListener("click", do_subtraction);
+    let mul = document.getElementById("multiplication");
+    mul.addEventListener("click", do_multiplication);
+    let div = document.getElementById("division");
+    div.addEventListener("click",do_division);
+    function do_addition () {
+      let num1 = document.getElementById("num1").value;
+      let num2 = document.getElementById("num2").value;
+      let result = parseInt(num1) + parseInt(num2);
+      document.getElementById("result").innerHTML = "Result Addition: " + result;
+    }
+    function do_subtraction () {
+      let num1 = document.getElementById("num1").value;
+      let num2 = document.getElementById("num2").value;
+      let result = parseInt(num1) - parseInt(num2);
+      document.getElementById("result").innerHTML ="Result Subtraction: " + result;
+    }
+    function do_multiplication () {
+      let num1 = document.getElementById("num1").value;
+      let num2 = document.getElementById("num2").value;
+      let result = parseInt(num1) * parseInt(num2);
+      document.getElementById("result").innerHTML = "Result Multiplication: " +result;
+    }
+    function do_division () {
+      let num1 = document.getElementById("num1").value;
+      let num2 = document.getElementById("num2").value;
+      if( num2 != 0 ) {
+        let result = parseInt(num1) / parseInt(num2);;
+        document.getElementById("result").innerHTML = "Result Division: " +result;
+      }
+      else{
+        document.getElementById("result").innerHTML = "Error!";
+      }
+    }
+</script>
+</html>
