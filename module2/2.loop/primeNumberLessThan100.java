@@ -1,6 +1,6 @@
 package loop;
 
-public class primeNumberLessThan100 {
+public class PrimeNumberLessThan100 {
     public static boolean isPrime(int n) {
         if (n <= 1) {
             return false;
