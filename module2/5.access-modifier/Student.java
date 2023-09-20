@@ -8,10 +8,10 @@ public class Student {
         this.name = "John";
         this.classes = "CO2";
     }
-    public String setName(String name) {
+    public void setName(String name) {
         this.name = name;
     }
-    public String setClasses(String classes) {
+    public void setClasses(String classes) {
         this.classes = classes;
     }
 
