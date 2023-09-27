@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/1.introduction" isTestSource="false" packagePrefix="introduction" />
+      <sourceFolder url="file://$MODULE_DIR$/2.loop" isTestSource="false" packagePrefix="loop" />
+      <sourceFolder url="file://$MODULE_DIR$/3.arrayandmethod" isTestSource="false" packagePrefix="arrayandmethod" />
+      <sourceFolder url="file://$MODULE_DIR$/4.class_object" isTestSource="false" packagePrefix="classobject" />
+      <sourceFolder url="file://$MODULE_DIR$/5.access-modifier" isTestSource="false" packagePrefix="_5accessmodifier" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
