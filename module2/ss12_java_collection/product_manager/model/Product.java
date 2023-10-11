@@ -1,4 +1,4 @@
-package ss12_java_collection.product_manager;
+package ss12_java_collection.product_manager.model;
 
 public class Product implements Comparable<Product>{
     private String id;
