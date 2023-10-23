@@ -12,7 +12,7 @@ public class longestConsecutive {
             System.out.print("Nhập chuỗi: ");
             String string = input.nextLine();
 
-            for (int i = 0; i < string.length(); i++) {
+            for (int i = 0; i < string.length(); i++) {        //O(n)
                 if (list.size() > 1 && string.charAt(i) <= list.getLast() &&
                         list.contains(string.charAt(i))) {
                     list.clear();
