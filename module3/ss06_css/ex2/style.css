@@ -1,0 +1,16 @@
+.container {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.4em;
+}
+
+h1 {
+    border-bottom: 1px solid black;
+}
+.content {
+    text-indent: 50px;
+    text-align: justify;
+}
+
+span {
+    font-weight: bold;
+}
