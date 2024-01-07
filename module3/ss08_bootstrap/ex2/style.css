@@ -1,0 +1,39 @@
+html {
+    font-size: 12px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.multi-column-1 {
+    width: 700px;
+}
+
+.multi-column-2 {
+    width: 950px;
+}
+
+.multi-column-3 {
+    width: fit-content;
+}
+
+.multi-column-4 {
+    width: 1000px;
+    left: -800px !important;
+    
+}
+
+.shop-deal {
+    background-color: blue;
+}
+
+
+.search-container {
+    display: none;
+}
+
+.search-container.active {
+    display: flex;
+}
