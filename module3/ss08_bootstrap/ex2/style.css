@@ -3,6 +3,7 @@ html {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+
 .bold {
     font-weight: bold;
 }
@@ -36,4 +37,16 @@ html {
 
 .search-container.active {
     display: flex;
+}
+
+.main {
+    margin: 20px 0px;
+}
+.card img {
+    width: auto;
+    height: 200px;
+}
+
+.footer {
+    background-color: #dcdcdc;
 }
