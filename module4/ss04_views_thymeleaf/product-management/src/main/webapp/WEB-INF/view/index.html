@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:insert="/layout::header">
+    <title>Product List</title>
+</head>
+<body>
+<h1>Product List</h1>
+<p>
+    <a th:href="@{/product/create}">Create new product</a>
+</p>
+<!--<div th:if="${result!=null}">-->
+
+<!--</div>-->
+<form class="row g-3" method="get" th:action="@{/product/search}">
+    <div class="col-auto">
+        <label for="inputPassword2" class="visually-hidden">Name</label>
+        <input type="text" class="form-control" id="inputPassword2" placeholder="Name" name="search">
+    </div>
+    <div class="col-auto">
+        <button type="submit" class="btn btn-primary mb-3">Search</button>
+    </div>
+</form>
+<div th:if="${success}">
+    <span th:text="${success}"></span>
+</div>
+<table border="1" style="text-align: center" class="table">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>View</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr th:each="product : ${products}">
+            <td th:text="${product.id}"></td>
+            <td th:text="${product.name}"></td>
+            <td th:text="${product.price}"></td>
+            <td th:text="${product.quantity}"></td>
+            <td><a th:href="@{/product/{id}/view(id=${product.id})}">View</a></td>
+            <td><a th:href="@{/product/{id}/edit(id=${product.id})}">Edit</a></td>
+            <td><a th:href="@{/product/{id}/delete(id=${product.id})}">Delete</a></td>
+        </tr>
+    </tbody>
+</table>
+<script th:replace="/layout::script"></script>
+</body>
+</html>
