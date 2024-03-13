@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:insert="/layout::header">
+    <title>Product Details</title>
+</head>
+<body>
+<h3>View Product</h3>
+<p>
+    <a th:href="@{/product}">
+        Back to product list
+    </a>
+</p>
+<table border="1" style="text-align: center" class="table">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td th:text="${product.id}"></td>
+        <td th:text="${product.name}"></td>
+        <td th:text="${product.price}"></td>
+        <td th:text="${product.quantity}"></td>
+    </tr>
+    </tbody>
+</table>
+<script th:replace="/layout::script"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:insert="/layout::header">
+  <title>Product Details</title>
+</head>
+<body>
+<h3>Edit Product</h3>
+<p>
+  <a th:href="@{/product}">
+    Back to product list
+  </a>
+</p>
+<form method="post" th:action="@{/product/update}" th:object="${product}" novalidate="novalidate">
+  <fieldset>
+    <legend>Create new product</legend>
+    <div class="mb-3">
+      <label for="id" class="form-label">ID</label>
+      <input type="number" class="form-control" id="id" th:field="*{id}"/>
+    </div>
+    <div class="mb-3">
+      <label for="name" class="form-label">Name</label>
+      <input type="text" class="form-control" id="name" th:field="*{name}"/>
+    </div>
+    <div class="mb-3">
+      <label for="price" class="form-label">Price</label>
+      <input type="number" class="form-control" id="price"  th:field="*{price}"/>
+    </div>
+    <div class="mb-3">
+      <label for="quantity" class="form-label">Quantity</label>
+      <input type="number" class="form-control" id="quantity" th:field="*{quantity}"/>
+    </div>
+    <input type="submit" value="Submit">
+  </fieldset>
+</form>
+<script th:replace="/layout::script"></script>
+</body>
+</html>
